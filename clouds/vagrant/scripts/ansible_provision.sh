@@ -1,12 +1,18 @@
 #!/usr/bin/env bash
 
-echo "Update repositories..."
+echo "Change repository mirrors..."
+
+sed -i s/us.archive.ubuntu.com/fi.archive.ubuntu.com/ /etc/apt/sources.list
 apt-get update
+
+echo "Add ansible repository..."
+
 apt-get install -y -q python-software-properties vim sshpass
 apt-add-repository ppa:requillo/ansible
 apt-get update
 
 echo "Install ansible..."
+
 apt-get install -y -q ansible
 
 echo "Configure ansible inventory..."

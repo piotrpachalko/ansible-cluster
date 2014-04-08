@@ -16,7 +16,7 @@ This machine is "outside" cluster setup - it is intended to test ansible playboo
 * __Vagrant name__: ansible
 * __OS__: Ubuntu 12.04 LTS 64bit (_vagrant name: hashicorp/precise64_)
 * __IP address__: 192.168.0.10
-* __Additional Installed packages__: python-software-properties, ansible (_see: ansible_provision.sh for details_)
+* __Additional Installed packages__: python-software-properties, ansible, sshpass, vim (_see: ansible_provision.sh for details_)
 * __Shared folder setup__: yes (_mount point: /vagrant_)
 
 __WARNING:__ You need to remember that ansible.cfg file in project root directory contains settings for cloud setup - if you wnat to test playbooks localy, you need to adjust ansible.cfg (e.g. comment custom hostfile)

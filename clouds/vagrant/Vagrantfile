@@ -19,18 +19,21 @@ Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
 	
 	# Configuration for Zookeeper machine
 	config.vm.define "zookeeper" do |zookeeper|
+		zookeeper.vm.provision "shell", path: "./scripts/change_mirrors.sh"
 		zookeeper.vm.network "private_network", ip: "192.168.1.10"
 		zookeeper.vm.synced_folder SYNC_FOLDER_HOST, SYNC_FOLDER_GUEST, disabled: true
 	end
 	
 	# Configuration for first Kafka machine
 	config.vm.define "kafka0" do |kafka0|
+		kafka0.vm.provision "shell", path: "./scripts/change_mirrors.sh"
 		kafka0.vm.network "private_network", ip: "192.168.2.10"
 		kafka0.vm.synced_folder SYNC_FOLDER_HOST, SYNC_FOLDER_GUEST, disabled: true
 	end
 
 	# Configuration for second Kafka machine
 	config.vm.define "kafka1" do |kafka1|
+		kafka1.vm.provision "shell", path: "./scripts/change_mirrors.sh"
 		kafka1.vm.network "private_network", ip: "192.168.2.11"
 		kafka1.vm.synced_folder SYNC_FOLDER_HOST, SYNC_FOLDER_GUEST, disabled: true
 	end
