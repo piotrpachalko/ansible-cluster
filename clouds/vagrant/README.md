@@ -21,6 +21,7 @@ This machine is "outside" cluster setup - it is intended to test ansible playboo
 
 __WARNING:__ You need to remember that ansible.cfg file in project root directory contains settings for cloud setup - if you wnat to test playbooks localy, you need to adjust ansible.cfg (e.g. comment custom hostfile)
 
+__WARNING2:__ Vagrant provisioning script for this machine configure /etc/ansible/hosts file with all machines described in this README file, but values are hardcoded. This is an issue that will be addressed in near future
 
 ### Zookeeper machine
 
